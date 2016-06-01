@@ -1,0 +1,44 @@
+Include <b>Notification.php</b> in your <b>main.php</b> file and usage:
+
+<pre>
+  pqinclude("%%projectname%%/%%addonpath%%/Notification.php");
+  
+  class MainWindow extends QWidget {
+    private $notification;
+    
+    /* ... */
+    
+    public function initComponents() {
+      $this->notification = new Notification;
+
+      or
+
+      $this->notification = new Notification($this);
+
+    }
+
+    /* ... */
+
+    public function process() {
+
+    /* ... */
+
+    $this->notification->showMessage(Notification::SUCCESS, '%%title%%', '%%message%%');
+    
+    /* ... */
+
+	}
+  }
+  
+  /* ... */
+</pre>
+
+Constants to level message
+
+<pre>
+    Notification::SUCCESS
+    Notification::INFO
+    Notification::WARNING
+    Notification::ERROR
+    Notification::NONE
+</pre>

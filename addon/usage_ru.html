@@ -1,0 +1,44 @@
+Подключите <b>Notification.php</b> в файле <b>main.php</b> и используйте:
+
+<pre>
+  pqinclude("%%projectname%%/%%addonpath%%/Notification.php");
+  
+  class MainWindow extends QWidget {
+    private $notification;
+    
+    /* ... */
+    
+    public function initComponents() {
+      $this->notification = new Notification;
+
+      или
+
+      $this->notification = new Notification($this);
+
+    }
+
+    /* ... */
+
+    public function process() {
+
+    /* ... */
+
+    $this->notification->showMessage(Notification::SUCCESS, '%%title%%', '%%message%%');
+
+    /* ... */
+
+	}
+  }
+  
+  /* ... */
+</pre>
+
+Константы для задания уровня сообщения
+
+<pre>
+    Notification::SUCCESS
+    Notification::INFO
+    Notification::WARNING
+    Notification::ERROR
+    Notification::NONE
+</pre>

@@ -1,0 +1,12 @@
+{
+    "fullname": "Notification",
+    "author": "ArtMares",
+    "desc": "Notification for applications",
+    "version": "0.1",
+    "includes": [
+        "Notification.php"
+    ],
+    "files": [
+        "Notification.php"
+    ]
+}
